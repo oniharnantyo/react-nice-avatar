@@ -8,11 +8,11 @@ export default defineConfig({
   resolve: {
     alias: [
       {
-        find: /^react-nice-avatar\/(.*)/,
+        find: /^@oniharnantyo\/react-nice-avatar\/(.*)/,
         replacement: `${path.resolve(__dirname, "src")}/$1`,
       },
       {
-        find: "react-nice-avatar",
+        find: "@oniharnantyo/react-nice-avatar",
         replacement: path.resolve(__dirname, "src/index.tsx"),
       },
       {

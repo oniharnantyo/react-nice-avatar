@@ -9,11 +9,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@oniharnantyo/react-nice-avatar": "file:../..",
     "chroma-js": "^2.1.2",
     "prop-types": "^15.7.2",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-nice-avatar": "file:../.."
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.0.0",

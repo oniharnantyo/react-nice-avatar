@@ -9,6 +9,6 @@
     { "type": "perf", "hidden": "Performace improve" },
     { "type": "test", "hidden": true }
   ],
-  "commitUrlFormat": "https://github.com/dapi-labs/react-nice-avatar/commits{{hash}}",
-  "compareUrlFormat": "https://github.com/dapi-labs/react-nice-avatar/compare/{{previousTag}}...{{currentTag}}"
+  "commitUrlFormat": "https://github.com/oniharnantyo/react-nice-avatar/commits{{hash}}",
+  "compareUrlFormat": "https://github.com/oniharnantyo/react-nice-avatar/compare/{{previousTag}}...{{currentTag}}"
 }

@@ -16,7 +16,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      "react-nice-avatar": path.resolve(__dirname, "./src"),
+      "@oniharnantyo/react-nice-avatar": path.resolve(__dirname, "./src"),
     },
   },
 });

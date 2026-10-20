@@ -9,9 +9,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@oniharnantyo/react-nice-avatar": "file:../..",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-nice-avatar": "file:../.."
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.0.0",
