@@ -357,7 +357,7 @@ This project is built and maintained with [Vite+](https://viteplus.dev) (`vp`), 
    git clone git@github.com:dapi-labs/react-nice-avatar.git
    cd react-nice-avatar
    ```
-2. Install dependencies (Node.js 18 or newer):
+2. Install dependencies (Node.js 22.18+, 24.11+ or 26+ — required by the Vite+ toolchain):
    ```sh
    npm install
    ```
