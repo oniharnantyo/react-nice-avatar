@@ -10,20 +10,29 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+      # Required for npm trusted publishing: lets the runner request the
+      # OIDC token that npm exchanges for a short-lived publish token.
       id-token: write
     steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
         with:
+          # A release job does not push anything, so there is no reason to
+          # leave the job token in .git/config.
+          persist-credentials: false
+
+      - uses: actions/setup-node@v7
+        with:
+          # Node 24 ships npm >= 11.5.1, the minimum for OIDC publishing.
+          # (Node 22 ships npm 10.x and cannot publish via trusted publishing.)
           node-version: "24.x"
           registry-url: "https://registry.npmjs.org"
-          cache: "npm"
+          # Never use the package manager cache in a release build.
+          package-manager-cache: false
 
       - run: npm ci
       - run: npm run test
       - run: npm run typecheck
       - run: npm run build
-      - run: npm publish --provenance --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      # No NODE_AUTH_TOKEN: npm authenticates with this workflow's OIDC
+      # identity and attaches a provenance attestation automatically.
+      - run: npm publish --access public

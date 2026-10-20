@@ -400,8 +400,25 @@ This project is built and maintained with [Vite+](https://viteplus.dev) (`vp`), 
 
 ## Release
 
-Pushing a `v*` tag publishes the package to npm with provenance via GitHub
-Actions:
+Publishing uses [npm trusted publishing](https://docs.npmjs.com/trusted-publishers):
+the workflow authenticates to the registry with a short-lived OIDC token, so
+no long-lived `NPM_TOKEN` secret is needed. Provenance attestations are
+attached automatically.
+
+One-time setup — on [npmjs.com](https://www.npmjs.com) → Packages →
+`react-nice-avatar` → Settings → Trusted Publisher, add a GitHub Actions
+publisher with:
+
+| field                | value               |
+| -------------------- | ------------------- |
+| Organization or user | `oniharnantyo`      |
+| Repository           | `react-nice-avatar` |
+| Workflow filename    | `npm-publish.yml`   |
+
+> The new trusted publisher must complete its first publish within 2 days,
+> otherwise it expires and has to be recreated.
+
+Then publish by pushing a `v*` tag:
 
 ```sh
 git tag v1.5.1
