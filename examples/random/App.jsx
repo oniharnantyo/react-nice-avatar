@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Avatar, { genConfig } from "react-nice-avatar";
+import Avatar, { genConfig } from "@oniharnantyo/react-nice-avatar";
 
 export default function App() {
   const [config, setConfig] = useState(genConfig());

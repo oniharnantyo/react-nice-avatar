@@ -1,12 +1,12 @@
 # react-nice-avatar
 
-[![Version](http://img.shields.io/npm/v/react-nice-avatar.svg)](https://www.npmjs.org/package/react-nice-avatar)
+[![Version](http://img.shields.io/npm/v/@oniharnantyo/react-nice-avatar.svg)](https://www.npmjs.com/package/@oniharnantyo/react-nice-avatar)
 [![npm download][download-image]][download-url]
-[![CI](https://github.com/dapi-labs/react-nice-avatar/actions/workflows/ci.yml/badge.svg)](https://github.com/dapi-labs/react-nice-avatar/actions/workflows/ci.yml)
+[![CI](https://github.com/oniharnantyo/react-nice-avatar/actions/workflows/ci.yml/badge.svg)](https://github.com/oniharnantyo/react-nice-avatar/actions/workflows/ci.yml)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/df23baf6-daac-4ce5-a0b6-5baade2cb822/deploy-status)](https://app.netlify.com/sites/gracious-turing-db4aa3/deploys)
 
-[download-image]: https://img.shields.io/npm/dm/react-nice-avatar.svg?style=flat-square
-[download-url]: https://npmjs.org/package/react-nice-avatar
+[download-image]: https://img.shields.io/npm/dm/@oniharnantyo/react-nice-avatar.svg?style=flat-square
+[download-url]: https://npmjs.org/package/@oniharnantyo/react-nice-avatar
 
 <div align="center">
     <a href="https://nice-avatar.chilllab.io/">
@@ -61,20 +61,20 @@ Everything above is opt-in, ships zero extra dependencies, and respects
 ## Installation
 
 ```sh
-npm install react-nice-avatar
+npm install @oniharnantyo/react-nice-avatar
 ```
 
 or
 
 ```sh
-yarn add react-nice-avatar
+yarn add @oniharnantyo/react-nice-avatar
 ```
 
 ## Usage
 
 1. Import the component.
    ```js
-   import Avatar, { genConfig } from "react-nice-avatar";
+   import Avatar, { genConfig } from "@oniharnantyo/react-nice-avatar";
    ```
 2. Generate a configuration
 
@@ -229,7 +229,7 @@ The hook wires the props, the ref and a small imperative API together — handy
 for AI copilots, chat widgets and anything that reacts to your app state:
 
 ```jsx
-import Avatar, { useAvatarController, genConfig } from "react-nice-avatar";
+import Avatar, { useAvatarController, genConfig } from "@oniharnantyo/react-nice-avatar";
 
 function Companion() {
   const { avatarProps, controller } = useAvatarController({
@@ -354,7 +354,7 @@ This project is built and maintained with [Vite+](https://viteplus.dev) (`vp`), 
 
 1. Clone the repo:
    ```sh
-   git clone git@github.com:dapi-labs/react-nice-avatar.git
+   git clone git@github.com:oniharnantyo/react-nice-avatar.git
    cd react-nice-avatar
    ```
 2. Install dependencies (Node.js 22.18+, 24.11+ or 26+ — required by the Vite+ toolchain):
@@ -400,14 +400,31 @@ This project is built and maintained with [Vite+](https://viteplus.dev) (`vp`), 
 
 ## Release
 
-Pushing a `v*` tag publishes the package to npm with provenance via GitHub
-Actions:
+Publishing uses [npm trusted publishing](https://docs.npmjs.com/trusted-publishers):
+the workflow authenticates to the registry with a short-lived OIDC token, so
+no long-lived `NPM_TOKEN` secret is needed. Provenance attestations are
+attached automatically.
+
+One-time setup — on [npmjs.com](https://www.npmjs.com) → Packages →
+`@oniharnantyo/react-nice-avatar` → Settings → Trusted Publisher, add a
+GitHub Actions publisher with:
+
+| field                | value               |
+| -------------------- | ------------------- |
+| Organization or user | `oniharnantyo`      |
+| Repository           | `react-nice-avatar` |
+| Workflow filename    | `npm-publish.yml`   |
+
+> The new trusted publisher must complete its first publish within 2 days,
+> otherwise it expires and has to be recreated.
+
+Then publish by pushing a `v*` tag:
 
 ```sh
-git tag v1.5.1
-git push origin v1.5.1
+git tag v0.1.0
+git push origin v0.1.0
 ```
 
 ## License
 
-Released under [MIT](/LICENSE) by [@dapi-labs](https://github.com/dapi-labs).
+Released under [MIT](/LICENSE) by [@oniharnantyo](https://github.com/oniharnantyo).

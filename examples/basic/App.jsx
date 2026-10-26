@@ -1,5 +1,5 @@
 import React from "react";
-import Avatar, { genConfig } from "react-nice-avatar";
+import Avatar, { genConfig } from "@oniharnantyo/react-nice-avatar";
 
 const config = genConfig({
   sex: "man",

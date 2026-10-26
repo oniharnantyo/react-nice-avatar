@@ -1,5 +1,5 @@
 {
-  "name": "react-nice-avatar",
+  "name": "@oniharnantyo/react-nice-avatar",
   "version": "0.1.0",
   "description": "react library for generating avatar",
   "keywords": [
@@ -11,7 +11,7 @@
   "author": "Oni Harnantyo",
   "repository": {
     "type": "git",
-    "url": "https://github.com/oniharnantyo/react-nice-avatar"
+    "url": "git+https://github.com/oniharnantyo/react-nice-avatar.git"
   },
   "files": [
     "dist"
@@ -28,6 +28,9 @@
       "default": "./dist/index.mjs"
     },
     "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "scripts": {
     "dev": "vp dev --config vite.config.demo.ts",
